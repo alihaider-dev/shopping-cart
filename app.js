@@ -1,32 +1,32 @@
-function updateNumber(product, isIncreasing) {
-  const caseInput = document.getElementById(`${product}-number`);
-  let caseNumber = caseInput.value;
+function updateNumber(product, price, isIncreasing) {
+  const productInput = document.getElementById(`${product}-number`);
+  let productNumber = productInput.value;
   if (isIncreasing == true) {
-    caseNumber = parseInt(caseNumber) + 1;
+    productNumber = parseInt(productNumber) + 1;
   }
-  else if (caseNumber > 0) {
-    caseNumber = parseInt(caseNumber) - 1;
+  else if (productNumber > 0) {
+    productNumber = parseInt(productNumber) - 1;
   }
-  caseInput.value = caseNumber
+  productInput.value = productNumber
   // Update Case Total
-  const caseTotal = document.getElementById(`${product}-total`);
-  caseTotal.innerText = caseNumber * 59;
+  const productTotal = document.getElementById(`${product}-total`);
+  productTotal.innerText = productNumber * price;
 }
 
 // Phone  plus and minus event handler 
 document.getElementById('phone-plus').addEventListener('click', function () {
-  updateNumber('phone', true)
+  updateNumber('phone', 1219, true)
 })
 document.getElementById('phone-minus').addEventListener('click', function () {
-  updateNumber('phone', false)
+  updateNumber('phone', 1219, false)
 })
 
 // Case  plus and minus event handler 
 document.getElementById('case-plus').addEventListener('click', function () {
-  updateNumber('case', true);
+  updateNumber('case', 59, true);
 })
 
 document.getElementById('case-minus').addEventListener('click', function () {
-  updateNumber('case', false);
+  updateNumber('case', 59, false);
 })
 
